@@ -1,6 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
-require 'rails/all'
+require "action_controller/railtie"
+require "action_mailer/railtie"
+require "active_resource/railtie"
+require "rails/test_unit/railtie"
 
 # If you have a Gemfile, require the gems listed there, including any gems
 # you've limited to :test, :development, or :production.
@@ -36,6 +39,9 @@ module Portfolio
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
 
+    config.generators do |g|
+      g.orm :mongo_mapper
+    end
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
   end

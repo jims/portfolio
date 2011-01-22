@@ -5,10 +5,13 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'bson_ext'
+gem 'mongo_mapper', '0.8.6'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+	gem 'unicorn'
+end
 
 # Deploy with Capistrano
 # gem 'capistrano'
