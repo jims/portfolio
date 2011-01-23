@@ -5,16 +5,9 @@ gem 'rails', '3.0.3'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'jquery-rails'
 gem 'bson_ext'
 gem 'mongo_mapper', '0.8.6'
-
-# Use unicorn as the web server
-group :development do
-	gem 'unicorn'
-end
-
-# Deploy with Capistrano
-# gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
