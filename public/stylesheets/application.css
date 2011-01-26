@@ -1,0 +1,10 @@
+* { padding: 0; margin: 0; }
+html, body, .main-viewport {
+	width: 100%;
+	height: 100%;
+}
+
+.main-viewport {
+	overflow: hidden;
+	position: absolute;
+}
