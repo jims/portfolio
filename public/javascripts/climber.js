@@ -13,6 +13,7 @@ jQuery(function  ($) {
 			
 		this.renderer = null;
 		this.renderTarget = opts.renderTo;
+		this.camera = null;
 		
 		var _fps = 0.0,
 			_camera,
@@ -42,7 +43,7 @@ jQuery(function  ($) {
 				
 				var sz = {w: $(this.renderTarget).innerWidth(), h: $(this.renderTarget).innerHeight()};
 				
-				_camera = new THREE.Camera(45, sz.w / sz.h, 1, 10000);
+				this.camera = _camera = new THREE.Camera(45, sz.w / sz.h, 1, 10000);
 				_camera.position.z = 1000;
 
 				this.renderTarget.append(this.renderer.domElement);
@@ -104,6 +105,11 @@ jQuery(function  ($) {
 	
 	portfolio = new ClimberApp({
 		renderTo: viewport
+	});
+	
+	viewport.mousemove(function  (e) {
+		portfolio.camera.position.x = e.pageX - ($(this).width() / 2);
+		portfolio.camera.position.y = e.pageY - ($(this).height() / 2);
 	});
 	
 	$(window).unload(function  () {
